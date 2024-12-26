@@ -1,0 +1,31 @@
+<ion-app>
+
+  <ion-split-pane when="lg" contentId="main-principal">
+    <ion-menu contentId="main-principal" menuId="principal">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Menu</ion-title>
+          <ion-buttons slot="end">
+            <ion-menu-button menu="principal">
+              <ion-icon name="close"></ion-icon>
+            </ion-menu-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <!-- <app-sidemenu></app-sidemenu> -->
+        @for (opc of menu; track $index) {
+          <ion-menu-toggle autoHide="false">
+            <ion-item (click)="navigate(opc.enlace)" detail lines="full"
+            button routerDirection="forward">
+              <ion-label>{{opc.name}}</ion-label>
+              <ion-icon slot="start" [name]="opc.icon"></ion-icon>
+            </ion-item>
+          </ion-menu-toggle>
+        }
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main-principal"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+</ion-header>
+<ion-content  [fullscreen]="true" >
+
+  <ion-list [inset]="true">
+    <ion-item>
+      <ion-input [(ngModel)]="data" label="Nombre" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <div class="mb ion-padding">
+    <ion-button expand="block" (click)="addState()">Guardar Estado</ion-button>
+  </div>
+</ion-content>
+
+

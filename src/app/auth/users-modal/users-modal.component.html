@@ -1,0 +1,60 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-back-button default-href (click)="closeModal()"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="ion-padding background-image">
+  <div class="container">
+    <ion-img [src]="image" style="text-align: center;"></ion-img>
+  <!-- <div class="main-img">
+    <img src="../../../assets/logo.png" style="text-align: center;" alt="">
+  </div> -->
+  <ion-label class="">
+    <h1 class="mx-3">Registrese</h1>
+  </ion-label>
+  <ion-list>
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" [(ngModel)]="name" name="full-name" label="Nombre Completo" placeholder="Nombre Completo" required>
+        <ion-icon slot="start" name="person" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" [(ngModel)]="email" name="email" label="Email" placeholder="Correo Electronico">
+        <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Seleccionar Rol de Usuario</ion-label>
+      <ion-select [(ngModel)]="selectRol">
+        <ion-select-option
+          *ngFor="let rol of rols"
+          [value]="rol.id">
+          {{ rol.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-select aria-label="rol" [(ngModel)]="selectRol" [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Seleccionar Tipo de Usuario">
+        <ion-select-option value="admin">Administrador</ion-select-option>
+        <ion-select-option value="administration">Administración</ion-select-option>
+        <ion-select-option value="teacher">Facilitador</ion-select-option>
+        <ion-select-option value="student">Estudiante</ion-select-option>
+        <ion-select-option value="father">Padre</ion-select-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-item class="mb">
+      <ion-input labelPlacement="stacked" [(ngModel)]="pass" name="passw" label="Password" placeholder="********">
+        <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+        <!-- <ion-input-password-toggle slot="end"></ion-input-password-toggle> -->
+        <ion-input type="password" placeholder="Contraseña" slot="end"></ion-input>
+      </ion-input>
+    </ion-item>
+</ion-list>
+  <div class="mb">
+    <ion-button expand="block" (click)="createUser()">Registrar</ion-button>
+  </div>
+</div>
+</ion-content>
+

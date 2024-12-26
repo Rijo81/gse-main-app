@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">rdbus</string>
+    <string name="title_activity_main">rdbus</string>
+    <string name="package_name">com.rdbazar.rdbus</string>
+    <string name="custom_url_scheme">com.rdbazar.rdbus</string>
+</resources>

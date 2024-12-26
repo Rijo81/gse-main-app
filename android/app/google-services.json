@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "397172144655",
+    "project_id": "rdbus-bab9b",
+    "storage_bucket": "rdbus-bab9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397172144655:android:a181311831b710c660817a",
+        "android_client_info": {
+          "package_name": "com.rdbazar.rdbus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwUUHNwfRVsZ5ZqtV2KHQAtlm_9Vrty1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

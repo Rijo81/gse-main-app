@@ -1,0 +1,34 @@
+# Definición de variables
+variables:
+  PROD_EC2_IPADDRESS: "rdcitas.com"
+
+  PATH_PROD_TEMP: /home/ubuntu/rdcitas
+  PATH_PROD_TARGET: /usr/share/nginx/citas
+
+# Deploys
+stages:
+  - prod-deploy
+
+prod-deploy:
+  stage: prod-deploy
+  image: alpine:latest
+
+  before_script:
+    - command -v ssh-agent > /dev/null || ( apk add --update openssh )
+    - apk update && apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $PROD_EC2_IPADDRESS >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+
+  script:
+    - mkdir .rdcitas
+    - cp -r www/* .rdcitas
+    - mv .rdcitas rdcitas
+    - ssh -o StrictHostKeyChecking=no ubuntu@$PROD_EC2_IPADDRESS "sudo rm -rf $PATH_PROD_TEMP/*;"
+    - rsync -a -r rdcitas/* ubuntu@$PROD_EC2_IPADDRESS:$PATH_PROD_TEMP/
+    - ssh -o StrictHostKeyChecking=no ubuntu@$PROD_EC2_IPADDRESS "sudo rm -rf $PATH_PROD_TARGET/*;"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$PROD_EC2_IPADDRESS "sudo cp -r $PATH_PROD_TEMP/* $PATH_PROD_TARGET/;"
+    - ssh -o StrictHostKeyChecking=no ubuntu@$PROD_EC2_IPADDRESS "sudo systemctl restart nginx;"

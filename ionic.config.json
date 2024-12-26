@@ -1,0 +1,7 @@
+{
+  "name": "rdbazarkb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
