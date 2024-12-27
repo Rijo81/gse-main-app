@@ -130,8 +130,6 @@ export class UsersComponent  implements OnInit {
           text: 'Actualizar',
             handler: async (data) => {
               const updateUser = { ...user, name: data.name };
-
-
               await this.usersListService.editUsers(user.id_user, updateUser);
               this.loadUsers();
               console.log(this.loadUsers());

@@ -7,14 +7,14 @@ import { RolsI } from 'src/app/models/rols.models';
 import { LocalstoreService } from 'src/app/services/localstore/localstore.service';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonContent, IonCard, IonCardHeader,
   IonCardTitle, IonCardContent, IonItem, IonLabel, IonList, IonButton, IonSelectOption,
-  IonMenuButton } from "@ionic/angular/standalone";
+  IonMenuButton, IonInput } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-type-requests',
   templateUrl: './type-requests.component.html',
   styleUrls: ['./type-requests.component.scss'],
   standalone: true,
-  imports: [IonButton, IonList, IonLabel, IonItem, IonCardContent, IonCardTitle, IonCardHeader,
+  imports: [IonInput, IonButton, IonList, IonLabel, IonItem, IonCardContent, IonCardTitle, IonCardHeader,
     IonCard, IonContent, IonButtons, IonTitle, IonToolbar, IonHeader,  CommonModule, FormsModule,
     ReactiveFormsModule, IonSelectOption, IonMenuButton]
 })

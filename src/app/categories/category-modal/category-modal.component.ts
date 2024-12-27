@@ -3,15 +3,15 @@ import { Component, Input } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonContent, IonItem, IonLabel,
-  IonFooter, IonSelectOption } from "@ionic/angular/standalone";
+   IonSelectOption, IonList, IonInput, IonSelect } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-category-modal',
   templateUrl: './category-modal.component.html',
   styleUrls: ['./category-modal.component.scss'],
   standalone: true,
-  imports: [IonFooter, IonLabel, IonItem, IonContent, IonButton, IonButtons, IonTitle,
-    IonToolbar, IonHeader,  CommonModule, FormsModule, ReactiveFormsModule, IonSelectOption ]
+  imports: [IonInput, IonList, IonLabel, IonItem, IonContent, IonButton, IonButtons, IonTitle,
+    IonToolbar, IonHeader,  CommonModule, FormsModule, ReactiveFormsModule, IonSelectOption, IonSelect ]
 })
 export class CategoryModalComponent  {
 

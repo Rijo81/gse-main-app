@@ -9,14 +9,14 @@ import { RolsService } from 'src/app/services/rols/rols.service';
 import { UserService } from 'src/app/services/user/user.service';
 import { IonHeader, IonToolbar, IonTitle, IonButtons, IonContent, IonLabel, IonAvatar,
   IonPopover, IonButton, IonItem, IonList, IonReorderGroup, IonIcon, IonFab,
-  IonFabButton, IonMenuButton, IonModal } from "@ionic/angular/standalone";
+  IonFabButton, IonMenuButton, IonModal, IonInput } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-rols',
   templateUrl: './rols.component.html',
   styleUrls: ['./rols.component.scss'],
   standalone: true,
-  imports: [IonModal,  IonFabButton, IonFab, IonIcon, IonReorderGroup, IonList, IonItem, IonButton,
+  imports: [IonInput, IonModal,  IonFabButton, IonFab, IonIcon, IonReorderGroup, IonList, IonItem, IonButton,
      IonPopover, IonAvatar, IonLabel, IonContent, IonButtons, IonTitle, IonToolbar,
     IonHeader,  FormsModule, CommonModule, ReactiveFormsModule, IonMenuButton ]
 })

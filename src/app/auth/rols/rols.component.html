@@ -45,21 +45,7 @@
       <ion-content class="ion-padding">
         <h3>Roles</h3>
         <ion-item>
-          <ion-input
-          label="Enter your name"
-            labelPlacement="stacked"
-            type="text"
-            placeholder="Your name"
-            [(ngModel)]="rolsInput.name"
-         ></ion-input>
-          <!-- <ion-input
-            name="rol"
-            label="Enter your name"
-            labelPlacement="stacked"
-            type="text"
-            placeholder="Your name"
-            [(ngModel)]="rolsInput.name"
-          ></ion-input> -->
+          <ion-input type="text" label="Nombre del Rol" placeholder="Nombre" [(ngModel)]="rolsInput.name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-checkbox justify="start" labelPlacement="end" [(ngModel)]="rolsInput.permition_categories">Categorias</ion-checkbox>
